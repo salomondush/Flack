@@ -11,7 +11,7 @@ Webpages and description
 
     Education history: primary, secondary + locations where I took the classes, and my Vanderbilt scholarship
 
-    Hobbies: From harvard interview
+    Hobbies
 
     Inspirations & Explorations: Form harvard interview
 
