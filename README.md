@@ -1,6 +1,7 @@
 # Project 0
 
-Web Programming with Python and 
+Web Programming with Python and Javascript
+ This is a submission for project0. I used flask because I've already covered it in the first cs50 course. Moreover, it is more dynamic.
 
 Website name: MySelf    
     description: This website is going to depict my life, who I am as a person, my aspirations,
