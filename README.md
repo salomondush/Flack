@@ -13,5 +13,5 @@ Webpages and description
 
     Hobbies
 
-    Inspirations & Explorations: Form harvard interview
+    Inspirations & Explorations
 
