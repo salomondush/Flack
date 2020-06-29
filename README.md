@@ -1,45 +1,35 @@
-# Project 1
+# Project 2
 
 Web Programming with Python and JavaScript
 
-B reviews
+Flack
 
-        This is a book review website, B reviews. It is a book review webiste where users come and leave ratings and reviews on any book they want.
-        
-        An external source included to get book ratings is Goodreads book_reviews API, which returns back a JSON containing all rating information about a particular book. Another extenal source is Heroku, which is the location of our database.
+    This is a messaging web app application. At first, users can get in using only their display names. New users are required to create a display name inorder to join channels or groups. An added feature is that users can message others privately, but only when they share the same group or channel.
 
-TEMPLATES(pages).
+TEMPLATES (pages)
 
-NB: The user is only able to view the navigation bar, login and register pages when not logged in. Other pages are acccessed only when logged in.
+    - hello.html: This is the landing page for all users when not logged in. There are two fields for users already with display names and new ones respectively. Users are warned if they are trying to create dispaly names that already exists or if they try to login with a non valid display name.
 
-    - Login: This page allows users to login inorder to access or record book reviews using an email and the account's password. It checks if the user actually exists before logging in. 
+    - layout.html: After the user gets in using a display name, this is the next page. First, the page displays all available channels showing those that a user is included in, and other ones that the user can join. On every channel, there's a badge showing the number of users in it. Moreover, a user is welcome to create a new channel by which he/she is redirected to the new channel empty chats to start chating. 
+    
+    When users join a new channel or select an existing one, they are taken to the channel's messages. The side navigation bar shows the active channel, and the number of users in it, which if clicked opens a side bar showing the names of those users. In addition, if there are any messages, they are all loaded up to 100 only.
 
-    - register: New users are able to create new acounts on this page with only an email address and a password. This page checks if passwords match or if the user doesn't already exist inorder to allow you to register. 
+    Now, a user can send and recieve messages without reloading the page. When sending a message, it posted showing the display name of the user, time, and the actual message. 
 
-    - home.html: This page includes a search area that allows users to search for books in our heroku database. A user can search using part/full ISBN, Author's name, or Book's title. Also, it displays a sample of the books in our databse in a table format. 
+PERSONAL TOUCH (private messaging)
 
-    - searched.html: After a search is made in the home.html, the page directs the user to this page where a list of search description matching books are presented. Here, the user is able to click on any book in their results to get generel book information and its Goodreads reviews and ratings. More important, the user can view and submit ratings.
-
-    - book.html: When a book is selected from the search results in searched.html, he/she is directed to this page, where general book informtion, like author, title, release year, and goodreads ratings, is displayed. Moreovere, the user is able to see other user's ratings on the book, and is also able to submit his/her rating and review. One user cannot review the same book two times; the submit button gets immidiately disabled. 
-
-    -logout: The user can logout at any time from where the current session is cleared. 
+    - The user is able to privately chat with those sharing the same groups by clicking on any user on the list under the DIRECT MESSAGING part of the side navigation.
 
 PYTHON FILES:
+
+    -application.py: It contains all the python code that works on the server side to store and send data that allows for all of the above to work. 
     
-    - application.py: This file includes the whole python code running on our server to make all of the above actions possible
+    Four global datastructures are used to store all data. First is the messages dictionary which stores channels as keys and channel's messages as list of lists values. Second is the channels dicionary which stores all channel and user related data. Channels are keys and values are lists of users respective. The third data sctructure, users dictionary, stores all users with user number as keys and names as values. The fourth data stracture, direct dictionary, is responsible for all direct messaging; keys are certain users and values are also dictionaries storing private charts btn two users.
 
-    - functions.py: This python file includes the search, API, and the login_required functions. The login required function allows as to make some pages unavailable when the user tries to get them without logging in first. 
+    -functions.py: it contains a function to prevents users from any form fo chatting without a display name.
 
-    - import.py: All of the books in our database are imported from a csv file of 5000 books using the code in this python file. 
+JAVASCRIPT FILES:
 
-DATABASE(TABLES):
+    - control.js: This javascript is responsible for client-side operations. AJAX is used to comunicate with the server, and web sockets are used to display real-time messages. Futhermore, local storage is used to store data like current channel, current private chat id, and current user. Also, all buttons and clicks are configured through this javascript file. It's a little bit messy, but it works. 
 
-    - users table: This table corrects all users' credentials: email and hashed password. It has columns id, email, and hash.
-
-    - books table: All of the books and related information are stored in this table. id, isbn, title, author, and year are all columns of data in this table. 
-
-    - reviews table: with user_id, rating, review, and book_id columns, this table stores all data related to reviews and ratings. This data is connected to a certain book and user using user and book ids as foreign keys. 
-
-REQUIREMENTS: the requirement text file includes all of the required modules to run this project. 
-
-
+All css files are used for design purposes. The requirements.txt contains cs50's required modules to run this project.
