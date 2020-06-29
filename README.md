@@ -32,4 +32,6 @@ JAVASCRIPT FILES:
 
     - control.js: This javascript is responsible for client-side operations. AJAX is used to comunicate with the server, and web sockets are used to display real-time messages. Futhermore, local storage is used to store data like current channel, current private chat id, and current user. Also, all buttons and clicks are configured through this javascript file. It's a little bit messy, but it works. 
 
+    Using local storage, a user can close the browser when on a particular channel, and when he comes back, he gets directed to the channel that he/she left off. However, this does not work for private chats, only for channels.
+
 All css files are used for design purposes. The requirements.txt contains cs50's required modules to run this project.
