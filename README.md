@@ -1,19 +1,11 @@
-# Project 2
-
-Web Programming with Python and JavaScript
-
-Flack
+# Flack
 
 This is a messaging web app application. At first, users can get in using only their display names. New users are required to create a display name inorder to join channels or groups. An added feature is that users can message others privately, but only when they share the same group or channel.
 
 Here's a walkthrough [video of the application](https://www.youtube.com/watch?v=nUJGn2ssreg) 
 
 
-PERSONAL TOUCH (private messaging)
-
-    - The user is able to privately chat with those sharing the same groups by clicking on any user on the list under the DIRECT MESSAGING part of the side navigation.
-
-PYTHON FILES:
+## Python Files:
 
 -application.py: It contains all the python code that works on the server side to store and send data that allows for all of the above to work. 
     
@@ -21,7 +13,7 @@ Four global datastructures are used to store all data. First is the messages dic
 
 -functions.py: it contains a function to prevents users from any form fo chatting without a display name.
 
-JAVASCRIPT FILES:
+## Javascript Files:
 
 - control.js: This javascript is responsible for client-side operations. AJAX is used to comunicate with the server, and web sockets are used to display real-time messages. Futhermore, local storage is used to store data like current channel, current private chat id, and current user. Also, all buttons and clicks are configured through this javascript file. It's a little bit messy, but it works. 
 
